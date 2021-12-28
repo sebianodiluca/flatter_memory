@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:audioplayers/audioplayers.dart';
 import 'package:memory_game/pages/memory_page.dart';
 
 void main() => runApp(MyApp());
@@ -32,6 +32,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+   AudioCache audioCache = AudioCache();
+  AudioPlayer advancedPlayer = AudioPlayer();
+  String localFilePath;
+  String localAudioCacheURI;
+
   String _INIT = "assets/Group.png";
   String _MENU = "assets/menu.png";
   String _SCORE = "assets/score.png";
@@ -40,6 +45,7 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    
     //reStart();
   }
 
